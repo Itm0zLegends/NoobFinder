@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Noob",
+    "rarity": "Commun",
+    "mutation": "Normal, Gold, Aura",
+    "image": "images/noob.png",
+    "description": "Le noob original",
+    "price": "$250"
+  }
+]
