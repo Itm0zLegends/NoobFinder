@@ -79,14 +79,14 @@ header h1 {
   font-weight: 600;
 }
 
-/* COLORATION UNIQUEMENT DU TEXTE DE LA RARETÉ */
+/* RARETÉ */
 .rarete-Commun { color: #b0b0b0; }
 .rarete-Rare { color: #4fc3f7; }
 .rarete-Épique { color: #ab47bc; }
 .rarete-Légendaire { color: #ffca28; }
 .rarete-Mythique { color: #ff4081; }
 
-/* PRIX EN VERT */
+/* PRIX */
 .price {
   color: #4caf50;
   font-weight: 700;

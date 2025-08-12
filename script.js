@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImage = document.getElementById('modal-image');
   const modalDescription = document.getElementById('modal-description');
   const modalRarity = document.getElementById('modal-rarity');
-  const modalMutation = document.getElementById('modal-mutation');
   const modalPrice = document.getElementById('modal-price');
 
   // Pop-up éléments
@@ -31,7 +30,6 @@ function openModal(noob) {
   modalRarity.classList.add('rarete-' + noob.rarity);
 
   modalRarity.textContent = noob.rarity;
-  modalMutation.textContent = noob.mutation;
   modalPrice.innerHTML = `Prix : <span class="price">${noob.price ?? "Non disponible"}</span>`;
   modalOverlay.classList.remove('hidden');
 }
