@@ -6,12 +6,16 @@ html, body {
   background: #1c1f26;
   color: white;
   font-family: Arial, sans-serif;
-  position: relative;
+
+  /* Permet au footer de rester en bas */
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-/* Conteneur principal pour padding-bottom pour le footer */
+/* Conteneur principal qui prend tout l'espace dispo */
 #page-content {
+  flex: 1;
   padding-bottom: 50px; /* espace pour footer */
 }
 
@@ -81,6 +85,7 @@ header h1 {
 
 /* RARETÉ */
 .rarete-Commun { color: #b0b0b0; }
+.rarete-UnCommun { color: #4caf50; }
 .rarete-Rare { color: #4fc3f7; }
 .rarete-Épique { color: #ab47bc; }
 .rarete-Légendaire { color: #ffca28; }
@@ -92,11 +97,8 @@ header h1 {
   font-weight: 700;
 }
 
-/* FOOTER positionné en bas */
+/* FOOTER fixé en bas du contenu */
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   background: #1565c0;
   color: white;
   padding: 10px 0;

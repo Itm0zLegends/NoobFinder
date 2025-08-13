@@ -36,7 +36,7 @@ function openModal(noob) {
   modalPrice.innerHTML = `
     Prix : <span class="price">${noob.price ?? "Non disponible"}</span>
     <br>
-    <span style="color:lime;">+${perSecond}$/s</span>
+    <span style="color:yellow;">+${perSecond}$/s</span>
   `;
 
   modalOverlay.classList.remove('hidden');
