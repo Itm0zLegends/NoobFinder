@@ -30,9 +30,18 @@ function openModal(noob) {
   modalRarity.classList.add('rarete-' + noob.rarity);
 
   modalRarity.textContent = noob.rarity;
-  modalPrice.innerHTML = `Prix : <span class="price">${noob.price ?? "Non disponible"}</span>`;
+
+  // Prix + revenu par seconde
+  const perSecond = noob.perSecond ?? 0; // récupère la valeur ou 0 si non défini
+  modalPrice.innerHTML = `
+    Prix : <span class="price">${noob.price ?? "Non disponible"}</span>
+    <br>
+    <span style="color:lime;">+${perSecond}$/s</span>
+  `;
+
   modalOverlay.classList.remove('hidden');
 }
+
 
 
   function closeModal() {
