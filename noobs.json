@@ -142,5 +142,13 @@
     "description": "",
     "price": "$12 000 000",
     "perSecond": "60 000"
+  },
+  {
+    "name": "Nouveau Noob 👀",
+    "rarity": "INCONNU",
+    "image": "images/newnoob.png",
+    "description": "",
+    "price": "INCONNU",
+    "perSecond": "INCONNU"
   }  
 ]
