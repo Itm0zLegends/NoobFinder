@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #1c1f26;
+  background: #1c1f26; /* Fond principal uniforme */
   color: white;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   display: flex;
@@ -15,22 +15,47 @@ html, body {
   padding-bottom: 60px;
 }
 
+/* --- HEADER --- */
 header {
-  background: linear-gradient(135deg, #1565c0, #42a5f5);
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  background: rgba(21,101,192,0.8); /* Transparent léger avec dégradé simplifié */
+  padding: 20px 40px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 }
 
+.status-link {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1); /* Transparent léger */
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.status-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- SEARCH --- */
 #search-container {
-  background: #242830;
+  background: rgba(36,40,48,0.7); /* Transparent léger */
   padding: 15px;
   text-align: center;
 }
@@ -43,17 +68,18 @@ header h1 {
   border: none;
   border-radius: 30px;
   outline: none;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-  background: #1f2228;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  background: rgba(31,34,40,0.8);
   color: white;
   transition: all 0.3s ease;
 }
 
 #search:focus {
-  background: #2b2f38;
+  background: rgba(43,47,56,0.85);
   box-shadow: 0 0 8px #42a5f5;
 }
 
+/* --- CARDS --- */
 #noobs-container {
   display: flex;
   flex-wrap: wrap;
@@ -63,11 +89,11 @@ header h1 {
 }
 
 .noob-card {
-  background: #2a2f3a;
+  background: rgba(42,47,58,0.85); /* Transparent léger */
   border-radius: 12px;
   padding: 15px;
   width: 220px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
@@ -88,7 +114,7 @@ header h1 {
   font-weight: 600;
 }
 
-/* RARETÉ */
+/* --- RARETÉ --- */
 .rarete-Commun { color: #b0b0b0; }
 .rarete-UnCommun { color: #4caf50; }
 .rarete-Rare { color: #4fc3f7; }
@@ -96,15 +122,15 @@ header h1 {
 .rarete-Légendaire { color: #ffca28; }
 .rarete-Mythique { color: #ff4081; }
 
-/* PRIX */
+/* --- PRIX --- */
 .price {
   color: #4caf50;
   font-weight: 700;
 }
 
-/* FOOTER */
+/* --- FOOTER --- */
 footer {
-  background: #1565c0;
+  background: rgba(21,101,192,0.8);
   color: white;
   padding: 10px 0;
   text-align: center;
@@ -113,12 +139,12 @@ footer {
   user-select: none;
 }
 
-/* POP-UP */
+/* --- POP-UP --- */
 #popup-overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5); /* Fond transparent */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,10 +155,10 @@ footer {
 #popup-overlay.hidden { display: none; }
 
 #popup {
-  background: rgba(42,47,58,0.95);
+  background: rgba(42,47,58,0.85); /* Transparent léger */
   padding: 25px 35px;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
   max-width: 90%;
   text-align: center;
   font-size: 1.1rem;
@@ -142,7 +168,7 @@ footer {
 #popup button {
   margin-top: 20px;
   padding: 10px 25px;
-  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  background: rgba(21,101,192,0.85);
   border: none;
   border-radius: 30px;
   color: white;
@@ -157,75 +183,98 @@ footer {
   box-shadow: 0 6px 18px rgba(66,165,245,0.6);
 }
 
-/* MODALE */
+/* --- MODALE --- */
 #modal-overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.6); /* Plus sombre pour isoler */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
 }
 
-#modal-overlay.hidden { display: none; }
+#modal-overlay.hidden {
+  display: none;
+}
 
 #modal {
-  background: rgba(42,47,58,0.9);
-  padding: 25px 35px;
-  border-radius: 18px;
-  max-width: 450px;
+  background: linear-gradient(
+    135deg,
+    rgba(42,47,58,0.95) 0%,
+    rgba(50,56,69,0.88) 100%
+  );
+  padding: 35px 30px 30px 30px;
+  border-radius: 22px;
+  max-width: 480px;
   width: 90%;
   color: white;
   text-align: center;
   position: relative;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
-  animation: fadeUp 0.35s ease;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.7),
+    0 0 25px rgba(66,165,245,0.25); /* Glow bleu subtil */
+  animation: fadeUp 0.4s ease;
   border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
 @keyframes fadeUp {
-  from { transform: translateY(20px) scale(0.95); opacity: 0; }
+  from { transform: translateY(25px) scale(0.95); opacity: 0; }
   to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 #modal img {
-  width: 100%;
-  max-height: 250px;
+  width: 90%;
+  max-height: 240px;
   object-fit: contain;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+#modal img:hover {
+  transform: scale(1.02);
 }
 
 #modal h2 {
-  margin: 10px 0;
-  font-size: 1.8rem;
+  margin: 0;
+  font-size: 2rem;
   color: #42a5f5;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 #modal p {
-  margin: 8px 0;
+  margin: 0;
   font-size: 1rem;
   opacity: 0.9;
+  line-height: 1.5;
 }
 
 #modal-close {
   position: absolute;
-  top: 8px;
-  right: 12px;
-  background: none;
+  top: 12px;
+  right: 15px;
+  background: rgba(255,255,255,0.12);
   border: none;
-  font-size: 1.8rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.6rem;
   color: #fff;
   cursor: pointer;
   font-weight: 700;
-  line-height: 1;
-  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
-
 #modal-close:hover {
   color: #ff4081;
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(1.1);
+  background: rgba(255,64,129,0.2);
 }
