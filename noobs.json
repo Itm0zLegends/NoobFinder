@@ -1,103 +1,3 @@
-<<<<<<< HEAD
-[
-  {
-    "name": "Noob",
-    "rarity": "Commun",
-    "image": "images/noob.png",
-    "description": "Le noob original",
-    "price": "$250",
-    "perSecond": "1"
-  },
-  {
-    "name": "Agent Noob",
-    "rarity": "Commun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "L'agent secret !",
-    "price": "$250",
-    "perSecond": "1"
-  },
-  {
-    "name": "Poor Noob",
-    "rarity": "Commun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Pauvre noob..",
-    "price": "INCONNU",
-    "perSecond": "INCONNU"
-  },
-  {
-    "name": "Surf Noob",
-    "rarity": "Commun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Le surf c'est ça vie !",
-    "price": "$550",
-    "perSecond": "2"
-  },
-  {
-    "name": "Swat Noob",
-    "rarity": "UnCommun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Attention la police est la !",
-    "price": "$700",
-    "perSecond": "3"
-  }, 
-  {
-    "name": "Magic Noob",
-    "rarity": "UnCommun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Le magicien !",
-    "price": "$250",
-    "perSecond": "1"
-  },  
-  {
-    "name": "Teacher Noob",
-    "rarity": "UnCommun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Attention il peux vous donnez des devoirs..",
-    "price": "INCONNU",
-    "perSecond": "INCONNU"
-  }, 
-  {
-    "name": "Builder Noob",
-    "rarity": "UnCommun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Il construit, tout simplement",
-    "price": "$650",
-    "perSecond": "INCONNU"
-  },  
-  {
-    "name": "Ninja Noob",
-    "rarity": "Rare",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "YAhhhh !",
-    "price": "INCONNU",
-    "perSecond": "INCONNU"
-  },             
-  {
-    "name": "Noob Boxeur",
-    "rarity": "Rare",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Un noob qui sait ce battre !",
-    "price": "$2k",
-    "perSecond": "6"
-  },
-  {
-    "name": "Hacker Noob",
-    "rarity": "Légendaire",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "Faites attention a votre ip !",
-    "price": "$30k",
-    "perSecond": "20"
-  },  
-  {
-    "name": "God Noob",
-    "rarity": "Mythique",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
-    "description": "",
-    "price": "$30k",
-    "perSecond": "20"
-  }  
-]
-=======
 [
   {
     "name": "Noob",
@@ -112,7 +12,7 @@
     "rarity": "Commun",
     "image": "images/agentnoob.png",
     "description": "L'agent secret !",
-    "price": "$INCONNU",
+    "price": "INCONNU",
     "perSecond": "INCONNU"
   },
   {
@@ -120,7 +20,7 @@
     "rarity": "Commun",
     "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
     "description": "Pauvre noob..",
-    "price": "400",
+    "price": "$400",
     "perSecond": "4"
   },
   {
@@ -152,7 +52,7 @@
     "rarity": "UnCommun",
     "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
     "description": "Attention il peux vous donnez des devoirs..",
-    "price": "800",
+    "price": "$800",
     "perSecond": "7"
   }, 
   {
@@ -168,7 +68,7 @@
     "rarity": "Rare",
     "image": "images/ninjanoob.png",
     "description": "YAhhhh !",
-    "price": "12 000",
+    "price": "$12 000",
     "perSecond": "95"
   },   
   {
@@ -176,7 +76,7 @@
     "rarity": "Rare",
     "image": "images/sleepingnoob.png",
     "description": "YAhhhh !",
-    "price": "24 000",
+    "price": "$24 000",
     "perSecond": "190"
   },  
   {
@@ -184,7 +84,7 @@
     "rarity": "Rare",
     "image": "images/richnoob.png",
     "description": "YAhhhh !",
-    "price": "50 000",
+    "price": "$50 000",
     "perSecond": "350"
   },              
   {
@@ -244,4 +144,3 @@
     "perSecond": "60 000"
   }  
 ]
->>>>>>> e83aa9b (Ajout des images)
