@@ -18,7 +18,7 @@
   {
     "name": "Poor Noob",
     "rarity": "Commun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
+    "image": "images/poornoob.png",
     "description": "Pauvre noob..",
     "price": "$400",
     "perSecond": "4"
@@ -50,7 +50,7 @@
   {
     "name": "Teacher Noob",
     "rarity": "UnCommun",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
+    "image": "images/teachernoob.png",
     "description": "Attention il peux vous donnez des devoirs..",
     "price": "$800",
     "perSecond": "7"
@@ -90,7 +90,7 @@
   {
     "name": "Noob Boxeur",
     "rarity": "Rare",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
+    "image": "images/boxeurnoob.png",
     "description": "Un noob qui sait ce battre !",
     "price": "$100 000",
     "perSecond": "700"
@@ -138,7 +138,7 @@
   {
     "name": "Noob Solider",
     "rarity": "Secret",
-    "image": "https://images.icon-icons.com/934/PNG/512/square-black-geometric-shape_icon-icons.com_72927.png",
+    "image": "images/noobsolider.png",
     "description": "",
     "price": "$12 000 000",
     "perSecond": "60 000"

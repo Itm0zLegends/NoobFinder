@@ -5,71 +5,76 @@ html, body {
   padding: 0;
   background: #1c1f26;
   color: white;
-  font-family: Arial, sans-serif;
-
-  /* Permet au footer de rester en bas */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-/* Conteneur principal qui prend tout l'espace dispo */
 #page-content {
   flex: 1;
-  padding-bottom: 50px; /* espace pour footer */
+  padding-bottom: 60px;
 }
 
 header {
-  background: linear-gradient(90deg, #1565c0, #42a5f5);
-  padding: 20px 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  user-select: none;
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  padding: 20px;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 #search-container {
-  background: #2a2f3a;
-  padding: 15px 10px;
+  background: #242830;
+  padding: 15px;
   text-align: center;
 }
 
 #search {
-  padding: 10px 15px;
-  width: 300px;
+  padding: 12px 18px;
+  width: 320px;
   max-width: 90%;
   font-size: 1rem;
   border: none;
   border-radius: 30px;
   outline: none;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  background: #1f2228;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#search:focus {
+  background: #2b2f38;
+  box-shadow: 0 0 8px #42a5f5;
 }
 
 #noobs-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  padding: 20px;
+  gap: 20px;
+  padding: 25px;
 }
 
 .noob-card {
   background: #2a2f3a;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 15px;
-  width: 200px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
 
 .noob-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
 .noob-card img {
@@ -79,7 +84,7 @@ header h1 {
 
 .noob-name {
   font-size: 18px;
-  margin: 10px 0;
+  margin: 10px 0 5px;
   font-weight: 600;
 }
 
@@ -97,13 +102,13 @@ header h1 {
   font-weight: 700;
 }
 
-/* FOOTER fixé en bas du contenu */
+/* FOOTER */
 footer {
   background: #1565c0;
   color: white;
   padding: 10px 0;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   user-select: none;
 }
@@ -111,46 +116,45 @@ footer {
 /* POP-UP */
 #popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  backdrop-filter: blur(4px);
 }
 
-#popup-overlay.hidden {
-  display: none;
-}
+#popup-overlay.hidden { display: none; }
 
 #popup {
-  background: #2a2f3a;
+  background: rgba(42,47,58,0.95);
   padding: 25px 35px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
   max-width: 90%;
   text-align: center;
-  color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  animation: popIn 0.3s ease;
 }
 
 #popup button {
   margin-top: 20px;
   padding: 10px 25px;
-  background: #1565c0;
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
   border: none;
   border-radius: 30px;
   color: white;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #popup button:hover {
-  background: #42a5f5;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(66,165,245,0.6);
 }
 
 /* MODALE */
@@ -163,40 +167,48 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  backdrop-filter: blur(6px);
 }
 
-#modal-overlay.hidden {
-  display: none;
-}
+#modal-overlay.hidden { display: none; }
 
 #modal {
-  background: #2a2f3a;
-  padding: 20px 30px;
-  border-radius: 12px;
-  max-width: 400px;
+  background: rgba(42,47,58,0.9);
+  padding: 25px 35px;
+  border-radius: 18px;
+  max-width: 450px;
   width: 90%;
   color: white;
   text-align: center;
   position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  animation: fadeUp 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(20px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 #modal img {
   width: 100%;
   max-height: 250px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 15px;
 }
 
 #modal h2 {
   margin: 10px 0;
   font-size: 1.8rem;
+  color: #42a5f5;
 }
 
 #modal p {
   margin: 8px 0;
   font-size: 1rem;
+  opacity: 0.9;
 }
 
 #modal-close {
@@ -209,10 +221,11 @@ footer {
   color: #fff;
   cursor: pointer;
   font-weight: 700;
-  user-select: none;
   line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 #modal-close:hover {
   color: #ff4081;
+  transform: rotate(90deg);
 }
