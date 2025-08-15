@@ -6,58 +6,74 @@
   <title>NoobFinder - Status</title>
   <link rel="stylesheet" href="status.css">
   <link rel="icon" type="image/png" href="images/t_pose_noob.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NoobFinder (Status)" />
+  <meta property="og:description" content="NoobFinder (Status), est un site créé pour connaitre le statut du jeu Steal a Noob, développé par DarSya's Creations." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Itm0zLegends/NoobFinder/main/images/t_pose_noob.png" />
+  <meta property="og:url" content="https://itm0zlegends.github.io/NoobFinder/status.html" />
 </head>
-
-<meta property="og:title" content="NoobFinder (Status)" />
-<meta property="og:description" content="NoobFinder (Status), est un site créé pour connaitre le status du jeu Steal a Noob, développé par DarSya's Creations." />
-<meta property="og:image" content="https://raw.githubusercontent.com/Itm0zLegends/NoobFinder/main/images/t_pose_noob.png" />
-<meta property="og:url" content="https://itm0zlegends.github.io/NoobFinder/status.html" />
-
 <body>
 
 <header>
   <div class="header-container">
     <h1>NoobFinder (Status)</h1>
-    <a href="index.html" class="status-link">Acceuil</a>
+    <a href="index.html" class="status-link">Accueil</a>
   </div>
 </header>
 
-  <div id="status-banner" class="status-banner status-online">
+<div id="status-banner" class="status-banner status-online">
   Vérification du statut...
+</div>
+
+<main id="status-container">
+  <div class="status-card maintenance" data-name="Steal a Noob (DarSya's Creations)" data-status="Maintenance" data-desc="Le jeu est en maintenance... (bugs)" data-issues="- Correction de bugs de duplication">
+    <h2>Steal a Noob</h2>
+    <p class="status-text">🟡 En Maintenance</p>
+    <p class="status-desc">Le jeu est en maintenance...</p>
   </div>
 
-
-  <main id="status-container">
-    <div class="status-card maintenance" data-name="Steal a Noob (DarSya's Creations)" data-status="Maintenance" data-desc="Le jeu est en maintenance... (bugs)" data-issues="- Correction de bugs de duplication">
-      <h2>Steal a Noob</h2>
-      <p class="status-text">🟡 En Maintenance</p>
-      <p class="status-desc">Le jeu est en maintenance..</p>
-    </div>
-
-    <div class="status-card online" data-name="NoobFinder + Noob Finder (Status)" data-status="En Ligne" data-desc="Aucun problème détecté." data-issues="">
-      <h2>NoobFinder</h2>
-      <p class="status-text">🟢 En Ligne</p>
-      <p class="status-desc">Aucun problème détecté.</p>
-    </div>
-  </main>
-
-  <footer>
-    <p>Développé par <strong>Itm0z</strong> pour <em>Steal a Noob</em> de DarSya's Creations</p>
-  </footer>
-
-  <!-- Modal -->
-  <div id="status-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2 id="modal-title"></h2>
-      <p id="modal-status"></p>
-      <p id="modal-desc"></p>
-      <hr>
-      <h3>Problèmes :</h3>
-      <p id="modal-issues"></p>
-    </div>
+  <div class="status-card online" data-name="NoobFinder + Noob Finder (Status)" data-status="En Ligne" data-desc="Aucun problème détecté." data-issues="">
+    <h2>NoobFinder</h2>
+    <p class="status-text">🟢 En Ligne</p>
+    <p class="status-desc">Aucun problème détecté.</p>
   </div>
+</main>
 
-  <script src="status.js"></script>
+<!-- Section Nouveautés -->
+<section id="news-container">
+  <h2>Nouveautés et MAJ :</h2>
+
+  <div class="news-card site">
+    <div class="type-bar"></div>
+    <span class="tag site">Site</span>
+    <p><strong>NoobFinder :</strong> Modification du CSS (Design) du site (14/08/2025)</p>
+  </div>
+  
+  <div class="news-card jeu">
+    <div class="type-bar"></div>
+    <span class="tag jeu">Jeu</span>
+    <p><strong>Steal a Noob :</strong> Économie du jeu corrigé ! (12/08/2025)</p>
+  </div>
+</section>
+  
+<footer>
+  <p>Développé par <strong>Itm0z</strong> pour <em>Steal a Noob</em> de DarSya's Creations</p>
+</footer>
+
+<!-- Modal -->
+<div id="status-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-status"></p>
+    <p id="modal-desc"></p>
+    <hr>
+    <h3>Problèmes :</h3>
+    <p id="modal-issues"></p>
+  </div>
+</div>
+
+<script src="status.js"></script>
 </body>
 </html>

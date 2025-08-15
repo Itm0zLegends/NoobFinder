@@ -10,7 +10,7 @@ html, body {
 }
 
 header {
-  background: rgba(21,101,192,0.8); /* Transparent léger avec dégradé simplifié */
+  background: rgba(21, 101, 192, 0.8); /* Transparent léger */
   padding: 20px 40px;
   box-shadow: 0 6px 25px rgba(0,0,0,0.3);
   border-bottom-left-radius: 15px;
@@ -36,7 +36,7 @@ header h1 {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.1); /* Transparent léger */
+  background: rgba(255, 255, 255, 0.1);
   padding: 8px 15px;
   border-radius: 8px;
   transition: background 0.3s;
@@ -45,6 +45,7 @@ header h1 {
 .status-link:hover {
   background: rgba(255, 255, 255, 0.25);
 }
+
 #status-container {
   flex: 1;
   display: flex;
@@ -214,4 +215,313 @@ footer {
   background: rgba(244, 67, 54, 0.2);
   color: #F44336;
   box-shadow: 0 0 12px rgba(244, 67, 54, 0.5);
+}
+
+#news-container {
+  margin: 2rem;
+}
+
+.news-card {
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: #2a2f3a;
+  color: white;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.tag.site { background-color: #1565c0; }
+.tag.jeu { background-color: #4caf50; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1c1f26;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: rgba(21, 101, 192, 0.8); /* Transparent léger */
+  padding: 20px 40px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.status-link {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.status-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#status-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.status-card {
+  background: #2a2f3a;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+  width: 280px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.status-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.status-desc {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.online .status-text { color: #4caf50; }
+.maintenance .status-text { color: #ffca28; }
+.offline .status-text { color: #f44336; }
+
+footer {
+  background: #1565c0;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #1e222d;
+  padding: 25px;
+  border-radius: 15px;
+  width: 420px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  position: relative;
+  transform: scale(0.8);
+  animation: zoomIn 0.3s ease forwards;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-status {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.status-online {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.status-maintenance {
+  background: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.status-offline {
+  background: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+  box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
+.modal-issues {
+  background: #2a2f3a;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #f44336;
+}
+
+@keyframes fadeIn {
+  from { background: rgba(0,0,0,0); }
+  to { background: rgba(0,0,0,0.75); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.status-banner {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.status-banner.status-online {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.5);
+}
+
+.status-banner.status-maintenance {
+  background: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.5);
+}
+
+.status-banner.status-offline {
+  background: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+  box-shadow: 0 0 12px rgba(244, 67, 54, 0.5);
+}
+
+#news-container {
+  margin: 2rem;
+}
+
+.news-card {
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: #2a2f3a;
+  color: white;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.tag.site { background-color: #1565c0; }
+.tag.jeu { background-color: #4caf50; }
+
+.news-card {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* La barre à gauche */
+.type-bar {
+    width: 6px;
+    height: 100%;
+    margin-right: 10px;
+}
+
+/* Couleurs selon type */
+.news-card.jeu .type-bar {
+    background-color: #4caf50; /* vert pour jeu */
+}
+
+.news-card.site .type-bar {
+    background-color: #1565c0; /* bleu pour site */
+}
+
+/* Tag optionnel */
+.tag.jeu {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.tag.site {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 5px;
 }
