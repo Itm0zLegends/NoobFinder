@@ -30,6 +30,11 @@ header {
   align-items: center;
 }
 
+.header-buttons {
+  display: flex;
+  gap: 10px; /* Espace entre Status et Info */
+}
+
 header h1 {
   margin: 0;
   font-size: 2rem;
@@ -52,6 +57,23 @@ header h1 {
 .status-link:hover {
   background: rgba(255, 255, 255, 0.25);
 }
+
+#info-btn {
+    font-size: 1rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.1); /* Même style que .status-link */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#info-btn:hover {
+    background: rgba(255, 255, 255, 0.25); /* Même hover que .status-link */
+}
+
 
 /* --- SEARCH --- */
 #search-container {
@@ -316,4 +338,67 @@ footer {
   height: 100%;
   z-index: -1; /* derrière tout le contenu */
   background: #1c1f26; /* fond sombre */
+}
+
+.info-modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem; /* espace pour mobile */
+}
+
+.info-modal-content {
+  background: linear-gradient(135deg, #1c1f26, #24272f);
+  color: #ffffff;
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh; /* limite la hauteur */
+  overflow-y: auto; /* scroll si contenu trop grand */
+  padding: 30px 35px;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  animation: popIn 0.3s ease-out;
+  position: relative;
+  line-height: 1.6;
+}
+
+.info-modal-content h2,
+.info-modal-content h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #42a5f5; /* titres colorés pour contraster */
+}
+
+.info-modal-content p {
+  margin-bottom: 1rem;
+}
+
+.info-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.info-close:hover {
+  color: #ff4081;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
