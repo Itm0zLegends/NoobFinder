@@ -102,6 +102,28 @@ function openModal(noob) {
     });
 });
 
+// Récupère les éléments de la modal info
+const infoBtn = document.getElementById("info-btn");
+const infoModal = document.getElementById("infoModalWindow");
+const infoClose = document.querySelector(".info-close");
+
+// Ouvre la modal quand on clique sur le bouton
+infoBtn.addEventListener("click", () => {
+  infoModal.style.display = "block";
+});
+
+// Ferme la modal quand on clique sur la croix
+infoClose.addEventListener("click", () => {
+  infoModal.style.display = "none";
+});
+
+// Ferme la modal si on clique en dehors du contenu
+window.addEventListener("click", (event) => {
+  if (event.target === infoModal) {
+    infoModal.style.display = "none";
+  }
+});
+
 const canvas = document.getElementById('animated-bg');
 const ctx = canvas.getContext('2d');
 let width = canvas.width = window.innerWidth;
