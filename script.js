@@ -2,16 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const noobsContainer = document.getElementById('noobs-container');
   const searchInput = document.getElementById('search');
 
-  // Modale éléments
+  // --- Modale Noob ---
   const modalOverlay = document.getElementById('modal-overlay');
   const modalCloseBtn = document.getElementById('modal-close');
   const modalName = document.getElementById('modal-name');
   const modalImage = document.getElementById('modal-image');
-  const modalDescription = document.getElementById('modal-description');
   const modalRarity = document.getElementById('modal-rarity');
   const modalPrice = document.getElementById('modal-price');
+  const modalPps = document.getElementById('modal-pps'); // <--- ajouté
+  const modalDescription = document.getElementById('modal-description');
 
-  // Pop-up éléments
+  // --- Pop-up (message d’info global) ---
   const popupOverlay = document.getElementById('popup-overlay');
   const popupClose = document.getElementById('popup-close');
 
@@ -19,46 +20,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Ouvrir la modale avec les infos d’un noob
 function openModal(noob) {
-  modalName.textContent = noob.name;
-  modalImage.src = noob.image;
-  modalImage.alt = noob.name;
-  modalDescription.textContent = noob.description;
+  if (!modalOverlay) return;
 
-  // Nettoyer d'abord toutes les classes de rareté pour éviter les conflits
-  modalRarity.className = '';
-  // Ajouter la classe de base + la classe de rareté dynamique
-  modalRarity.classList.add('rarete-' + noob.rarity);
+  if (modalName) modalName.textContent = noob.name ?? '';
+  if (modalImage) {
+    modalImage.src = noob.image ?? '';
+    modalImage.alt = noob.name ?? '';
+  }
+  if (modalDescription) {
+    modalDescription.textContent = noob.description ?? 'Pas de description disponible.';
+  }
 
-  modalRarity.textContent = noob.rarity;
+  if (modalRarity) {
+    modalRarity.className = '';
+    if (noob.rarity) modalRarity.classList.add('rarete-' + noob.rarity);
+    modalRarity.textContent = noob.rarity ?? '';
+  }
 
-  // Prix + revenu par seconde
-  const perSecond = noob.perSecond ?? 0; // récupère la valeur ou 0 si non défini
-  modalPrice.innerHTML = `
-    Prix : <span class="price">${noob.price ?? "Non disponible"}</span>
-    <br>
-    <span style="color:yellow;">+${perSecond}$/s</span>
-  `;
+  // Prix avec couleur
+  if (modalPrice) {
+    modalPrice.querySelector("span").innerHTML = noob.price
+      ? `<span style="color:limegreen; font-weight:bold;">${noob.price}$</span>`
+      : `<span style="color:gray;">Non disponible</span>`;
+  }
+
+  // Prix par seconde en dessous avec couleur
+  const modalPps = document.getElementById("modal-pps");
+  if (modalPps) {
+    modalPps.querySelector("span").innerHTML = noob.perSecond
+      ? `<span style="color:gold; font-weight:bold;">+${noob.perSecond}$/s</span>`
+      : `<span style="color:gray;">0$/s</span>`;
+  }
 
   modalOverlay.classList.remove('hidden');
 }
 
-
-
   function closeModal() {
-    modalOverlay.classList.add('hidden');
+    if (modalOverlay) modalOverlay.classList.add('hidden');
   }
 
-  modalCloseBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', e => {
-    if (e.target === modalOverlay) closeModal();
-  });
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', e => {
+      if (e.target === modalOverlay) closeModal();
+    });
+  }
 
   // Affiche la liste des noobs filtrée
   function displayNoobs(filter = '') {
+    if (!noobsContainer) return;
+
     noobsContainer.innerHTML = '';
     const filteredNoobs = noobs.filter(noob =>
-      noob.name.toLowerCase().includes(filter.toLowerCase())
+      (noob.name || '').toLowerCase().includes(filter.toLowerCase())
     );
+
     if (filteredNoobs.length === 0) {
       noobsContainer.innerHTML = `<p style="color:#aaa; font-size:1.1rem; text-align:center; width:100%;">Aucun noob trouvé 😢</p>`;
       return;
@@ -66,103 +82,110 @@ function openModal(noob) {
 
     filteredNoobs.forEach(noob => {
       const card = document.createElement('div');
-      card.className = 'noob-card'; // PLUS de coloration globale ici
-
+      card.className = 'noob-card';
       card.innerHTML = `
         <img src="${noob.image}" alt="${noob.name}" />
         <div class="noob-name">${noob.name}</div>
         <div><strong>Rareté :</strong> <span class="rarete-${noob.rarity}">${noob.rarity}</span></div>
         <div><strong>Prix :</strong> <span class="price">${noob.price}</span></div>
       `;
-
       card.addEventListener('click', () => openModal(noob));
       noobsContainer.appendChild(card);
     });
   }
 
-  searchInput.addEventListener('input', e => {
-    displayNoobs(e.target.value);
-  });
+  if (searchInput) {
+    searchInput.addEventListener('input', e => {
+      displayNoobs(e.target.value);
+    });
+  }
 
-  popupClose.addEventListener('click', () => {
-    popupOverlay.classList.add('hidden');
-  });
+  if (popupClose && popupOverlay) {
+    popupClose.addEventListener('click', () => {
+      popupOverlay.classList.add('hidden');
+    });
+  }
 
   // Charger le JSON des noobs
   fetch('noobs.json')
     .then(response => response.json())
     .then(data => {
-      noobs = data;
-      popupOverlay.classList.remove('hidden');
+      noobs = data || [];
+      // Montre le popup d’info au chargement si présent
+      if (popupOverlay) popupOverlay.classList.remove('hidden');
       displayNoobs();
     })
     .catch(err => {
-      noobsContainer.innerHTML = `<p style="color:red; text-align:center; width:100%;">Erreur lors du chargement des données.</p>`;
+      if (noobsContainer) {
+        noobsContainer.innerHTML = `<p style="color:red; text-align:center; width:100%;">Erreur lors du chargement des données.</p>`;
+      }
       console.error('Erreur chargement noobs.json:', err);
     });
 });
 
-// Récupère les éléments de la modal info
+// --- Modal "Info" (bouton du header) ---
 const infoBtn = document.getElementById("info-btn");
 const infoModal = document.getElementById("infoModalWindow");
 const infoClose = document.querySelector(".info-close");
 
-// Ouvre la modal quand on clique sur le bouton
-infoBtn.addEventListener("click", () => {
-  infoModal.style.display = "block";
-});
+if (infoBtn && infoModal && infoClose) {
+  infoBtn.addEventListener("click", () => {
+    infoModal.style.display = "block";
+  });
 
-// Ferme la modal quand on clique sur la croix
-infoClose.addEventListener("click", () => {
-  infoModal.style.display = "none";
-});
-
-// Ferme la modal si on clique en dehors du contenu
-window.addEventListener("click", (event) => {
-  if (event.target === infoModal) {
+  infoClose.addEventListener("click", () => {
     infoModal.style.display = "none";
-  }
-});
+  });
 
+  window.addEventListener("click", (event) => {
+    if (event.target === infoModal) {
+      infoModal.style.display = "none";
+    }
+  });
+}
+
+// --- Canvas background ---
 const canvas = document.getElementById('animated-bg');
-const ctx = canvas.getContext('2d');
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
 
-window.addEventListener('resize', () => {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-});
-
-const particles = [];
-const particleCount = 100;
-
-for(let i = 0; i < particleCount; i++){
-  particles.push({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.5,
-    dy: (Math.random() - 0.5) * 0.5,
-    alpha: Math.random() * 0.5 + 0.3
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
   });
+
+  const particles = [];
+  const particleCount = 100;
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
+      alpha: Math.random() * 0.5 + 0.3
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => {
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(66,165,245,${p.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
-
-function animate() {
-  ctx.clearRect(0,0,width,height);
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if(p.x < 0 || p.x > width) p.dx *= -1;
-    if(p.y < 0 || p.y > height) p.dy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(66,165,245,${p.alpha})`;
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-
-animate();

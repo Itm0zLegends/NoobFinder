@@ -3,7 +3,6 @@
     "name": "Noob",
     "rarity": "Commun",
     "image": "images/noob.png",
-    "description": "Le noob original",
     "price": "$100",
     "perSecond": "1"
   },
@@ -11,15 +10,13 @@
     "name": "Agent Noob",
     "rarity": "Commun",
     "image": "images/agentnoob.png",
-    "description": "L'agent secret !",
-    "price": "INCONNU",
-    "perSecond": "INCONNU"
+    "price": "$200",
+    "perSecond": "2"
   },
   {
     "name": "Poor Noob",
     "rarity": "Commun",
     "image": "images/poornoob.png",
-    "description": "Pauvre noob..",
     "price": "$400",
     "perSecond": "4"
   },
@@ -27,7 +24,6 @@
     "name": "Surf Noob",
     "rarity": "Commun",
     "image": "images/surfnoob.png",
-    "description": "Le surf c'est ça passion !",
     "price": "$200",
     "perSecond": "2"
   },
@@ -35,7 +31,6 @@
     "name": "Swat Noob",
     "rarity": "UnCommun",
     "image": "images/swatnoob.png",
-    "description": "Attention la police est la !",
     "price": "$3200",
     "perSecond": "28"
   }, 
@@ -43,7 +38,6 @@
     "name": "Magic Noob",
     "rarity": "UnCommun",
     "image": "images/magicnoob.png",
-    "description": "Le magicien !",
     "price": "$1600",
     "perSecond": "14"
   },  
@@ -51,7 +45,6 @@
     "name": "Teacher Noob",
     "rarity": "UnCommun",
     "image": "images/teachernoob.png",
-    "description": "Attention il peux vous donnez des devoirs..",
     "price": "$800",
     "perSecond": "7"
   }, 
@@ -59,7 +52,6 @@
     "name": "Builder Noob",
     "rarity": "UnCommun",
     "image": "images/buildernoob.png",
-    "description": "Il construit, tout simplement",
     "price": "$6 000",
     "perSecond": "50"
   },  
@@ -67,7 +59,6 @@
     "name": "Ninja Noob",
     "rarity": "Rare",
     "image": "images/ninjanoob.png",
-    "description": "YAhhhh !",
     "price": "$12 000",
     "perSecond": "95"
   },   
@@ -75,7 +66,6 @@
     "name": "Sleeping Noob",
     "rarity": "Rare",
     "image": "images/sleepingnoob.png",
-    "description": "YAhhhh !",
     "price": "$24 000",
     "perSecond": "190"
   },  
@@ -83,7 +73,6 @@
     "name": "Rich Noob",
     "rarity": "Rare",
     "image": "images/richnoob.png",
-    "description": "YAhhhh !",
     "price": "$50 000",
     "perSecond": "350"
   },              
@@ -91,7 +80,6 @@
     "name": "Noob Boxeur",
     "rarity": "Rare",
     "image": "images/boxeurnoob.png",
-    "description": "Un noob qui sait ce battre !",
     "price": "$100 000",
     "perSecond": "700"
   },
@@ -99,7 +87,6 @@
     "name": "Hacker Noob",
     "rarity": "Légendaire",
     "image": "images/hackernoob.png",
-    "description": "Faites attention a votre ip !",
     "price": "$250 000",
     "perSecond": "1500"
   },
@@ -107,7 +94,6 @@
     "name": "King Noob",
     "rarity": "Légendaire",
     "image": "images/kingnoob.png",
-    "description": "Faites attention a votre ip !",
     "price": "$500 000",
     "perSecond": "3000"
   }, 
@@ -115,7 +101,6 @@
     "name": "Demon Noob",
     "rarity": "Légendaire",
     "image": "images/demonnoob.png",
-    "description": "Faites attention a votre ip !",
     "price": "$1 000 000",
     "perSecond": "6000"
   },     
@@ -123,7 +108,6 @@
     "name": "God Noob",
     "rarity": "Mythique",
     "image": "images/godnoob.png",
-    "description": "",
     "price": "$2 500 000",
     "perSecond": "13 000"
   },
@@ -131,7 +115,6 @@
     "name": "Sayan Noob",
     "rarity": "Mythique",
     "image": "images/sayannoob.png",
-    "description": "",
     "price": "$5 000 000",
     "perSecond": "26 000"
   },
@@ -139,7 +122,6 @@
     "name": "Noob Solider",
     "rarity": "Secret",
     "image": "images/noobsolider.png",
-    "description": "",
     "price": "$12 000 000",
     "perSecond": "60 000"
   },
@@ -147,7 +129,6 @@
     "name": "Noob Creators",
     "rarity": "INCONNU",
     "image": "images/noobcreators.png",
-    "description": "",
     "price": "$108 000 000",
     "perSecond": "540 000"
   }  
